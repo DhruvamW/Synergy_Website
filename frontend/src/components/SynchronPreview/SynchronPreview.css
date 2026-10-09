@@ -1,0 +1,139 @@
+.synchron-preview {
+  padding: 120px 32px;
+
+  overflow: hidden;
+}
+
+.synchron-container {
+  max-width: var(--max-width);
+  min-height: 500px;
+  margin: 0 auto;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  padding: 64px;
+
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(236, 72, 153, 0.14),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(139, 92, 246, 0.14),
+      transparent 40%
+    ),
+    var(--glass-bg);
+
+  overflow: hidden;
+}
+
+.synchron-content {
+  position: relative;
+  z-index: 2;
+}
+
+.synchron-eyebrow {
+  margin-bottom: 20px;
+
+  color: var(--purple-light);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.synchron-content h2 {
+  margin-bottom: 24px;
+
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.synchron-content h2 span {
+  color: var(--pink);
+}
+
+.synchron-description {
+  max-width: 520px;
+  margin-bottom: 32px;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.synchron-button {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 13px 22px;
+
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 999px;
+
+  background: rgba(139, 92, 246, 0.12);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.synchron-button:hover {
+  transform: translateY(-2px);
+  background: rgba(139, 92, 246, 0.22);
+}
+
+.synchron-visual {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.synchron-year {
+  font-size: clamp(10rem, 20vw, 18rem);
+  font-weight: 800;
+  line-height: 1;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+
+  user-select: none;
+}
+
+@media (max-width: 800px) {
+  .synchron-preview {
+    padding: 80px 24px;
+  }
+
+  .synchron-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+
+    padding: 40px 32px;
+  }
+
+  .synchron-visual {
+    min-height: 180px;
+  }
+
+  .synchron-year {
+    font-size: 10rem;
+  }
+}

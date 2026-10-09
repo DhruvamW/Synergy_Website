@@ -1,0 +1,90 @@
+.vision-mission-section {
+  padding: 40px 32px 120px;
+}
+
+.vision-mission-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.vm-card {
+  padding: 48px;
+
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+
+  background: var(--glass-bg);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.vm-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(167, 139, 250, 0.35);
+}
+
+.vm-card-highlight {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(139, 92, 246, 0.15),
+      transparent 45%
+    ),
+    var(--glass-bg);
+}
+
+.vm-label {
+  color: var(--purple-light);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.vm-card h3 {
+  max-width: 500px;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.vm-card h3 span {
+  color: var(--text-secondary);
+}
+
+.vm-description {
+  max-width: 520px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+  .vision-mission-section {
+    padding: 20px 24px 80px;
+  }
+
+  .vision-mission-container {
+    grid-template-columns: 1fr;
+  }
+
+  .vm-card {
+    min-height: 350px;
+    padding: 32px;
+  }
+}
