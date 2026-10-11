@@ -1,0 +1,564 @@
+.team-section {
+  padding: 120px 32px;
+}
+
+.team-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.team-heading {
+  margin-bottom: 70px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.team-heading h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.team-heading h2 span {
+  color: var(--text-secondary);
+}
+
+.team-intro {
+  max-width: 500px;
+}
+
+.team-intro p {
+  margin-bottom: 20px;
+
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.team-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   TEAM GRID
+========================= */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   TEAM CARD
+========================= */
+
+.team-card {
+  width: 100%;
+  padding: 0;
+
+  display: block;
+
+  text-align: left;
+
+  background: transparent;
+  border: none;
+
+  color: inherit;
+  font: inherit;
+
+  cursor: pointer;
+}
+
+.team-image-wrapper {
+  position: relative;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.team-card-arrow {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(8, 6, 13, 0.75);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+
+  color: white;
+
+  font-size: 1.1rem;
+
+  opacity: 0;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.team-card:hover .team-image-wrapper {
+  transform: translateY(-4px);
+
+  border-color: rgba(167, 139, 250, 0.4);
+
+  box-shadow:
+    0 15px 50px rgba(139, 92, 246, 0.12);
+}
+
+.team-card:hover .team-image {
+  transform: scale(1.04);
+}
+
+.team-card:hover .team-card-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   CARD INFO
+========================= */
+
+.team-card-info {
+  padding: 18px 4px 0;
+}
+
+.team-card-info h3 {
+  margin-bottom: 6px;
+
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.team-card-info p {
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+
+.team-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  animation: teamOverlayIn 0.25s ease;
+}
+
+.team-modal-overlay::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 500px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.16),
+      transparent 65%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.team-modal {
+  position: relative;
+
+  width: min(100%, 1100px);
+  min-height: 520px;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    ),
+    #0c0b10;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.65),
+    0 0 80px rgba(139, 92, 246, 0.08);
+
+  animation: teamModalIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =========================
+   MODAL IMAGE
+========================= */
+
+.team-modal-image {
+  position: relative;
+
+  min-height: 520px;
+
+  overflow: hidden;
+}
+
+.team-modal-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(8, 6, 13, 0.35)
+    );
+}
+
+.team-modal-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.team-modal-content {
+  position: relative;
+
+  padding: 70px 60px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-modal-position {
+  margin-bottom: 18px;
+
+  color: var(--pink);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.team-modal-content h3 {
+  max-width: 600px;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.05em;
+}
+
+.team-modal-divider {
+  width: 42px;
+  height: 3px;
+
+  margin: 32px 0;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    var(--purple),
+    var(--pink)
+  );
+}
+
+.team-modal-description {
+  max-width: 550px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.team-modal-contact {
+  margin-top: auto;
+  padding-top: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.team-modal-contact > span {
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.team-contact-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-contact-links a {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(167, 139, 250, 0.3);
+
+  color: var(--text-primary);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.team-contact-links a:hover {
+  background: rgba(139, 92, 246, 0.16);
+
+  border-color: rgba(167, 139, 250, 0.65);
+
+  transform: translateY(-2px);
+}
+
+.contact-unavailable {
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.team-modal-close {
+  position: absolute;
+
+  top: 30px;
+  right: 30px;
+
+  z-index: 5;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  color: var(--text-secondary);
+
+  font-size: 1.8rem;
+  font-weight: 300;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.team-modal-close:hover {
+  background: rgba(139, 92, 246, 0.18);
+
+  color: white;
+
+  transform: rotate(90deg);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes teamOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes teamModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .team-heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-modal {
+    grid-template-columns: 40% 60%;
+  }
+
+  .team-modal-content {
+    padding: 55px 40px 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .team-section {
+    padding: 80px 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-modal-overlay {
+    padding: 18px;
+  }
+
+  .team-modal {
+    max-height: 90vh;
+
+    grid-template-columns: 1fr;
+
+    overflow-y: auto;
+  }
+
+  .team-modal-image {
+    min-height: 300px;
+    max-height: 380px;
+  }
+
+  .team-modal-content {
+    min-height: 400px;
+
+    padding: 35px 28px 30px;
+  }
+
+  .team-modal-content h3 {
+    font-size: 2.7rem;
+  }
+
+  .team-modal-contact {
+    margin-top: 35px;
+  }
+
+  .team-modal-close {
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+  }
+}

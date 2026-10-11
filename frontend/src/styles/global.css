@@ -13,7 +13,6 @@
   --pink: #ec4899;
 
   --border: rgba(255, 255, 255, 0.08);
-
   --glass-bg: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
 
@@ -21,11 +20,13 @@
 
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text-primary);
-  background: var(--bg-primary);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
+
+/* -------------------- */
+/* RESET */
+/* -------------------- */
 
 * {
   margin: 0;
@@ -35,13 +36,36 @@
 
 html {
   scroll-behavior: smooth;
+  background: #08060d;
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: var(--bg-primary);
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(91, 33, 182, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(126, 34, 206, 0.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(76, 29, 149, 0.12),
+      transparent 40%
+    ),
+    #08060d;
+
+  background-attachment: fixed;
+
   color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 button,
@@ -67,4 +91,137 @@ img {
 
 #root {
   min-height: 100vh;
+}
+
+/* -------------------- */
+/* MAIN SITE LAYER */
+/* -------------------- */
+
+.site-content {
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+  background: transparent;
+}
+
+/* -------------------- */
+/* SECTIONS */
+/* -------------------- */
+
+section {
+  position: relative;
+  background: transparent;
+}
+
+.hero,
+.about-section,
+.vision-mission-section,
+.synchron-preview-section,
+.how-we-work-section,
+.projects-section,
+.team-section,
+.contact-section {
+  background: transparent;
+}
+
+/* -------------------- */
+/* CONTAINERS */
+/* -------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* -------------------- */
+/* SECTION TYPOGRAPHY */
+/* -------------------- */
+
+.section-eyebrow {
+  margin-bottom: 16px;
+
+  color: var(--purple-light);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--text-primary);
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.section-title span {
+  background: linear-gradient(
+    90deg,
+    var(--purple-light),
+    var(--pink)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* -------------------- */
+/* GLASS EFFECT */
+/* -------------------- */
+
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* -------------------- */
+/* SCROLLBAR */
+/* -------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.35);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.55);
+}
+
+/* -------------------- */
+/* TEXT SELECTION */
+/* -------------------- */
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: #ffffff;
+}
+
+/* -------------------- */
+/* MOBILE */
+/* -------------------- */
+
+@media (max-width: 768px) {
+  :root {
+    --max-width: 100%;
+  }
+
+  .site-content {
+    overflow-x: hidden;
+  }
 }

@@ -1,0 +1,270 @@
+.footer {
+  padding: 90px 32px 30px;
+
+  border-top: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(139, 92, 246, 0.08),
+      transparent 35%
+    ),
+    var(--bg-secondary);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* =========================
+   MAIN FOOTER
+========================= */
+
+.footer-main {
+  min-height: 300px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+}
+
+/* =========================
+   EYEBROW
+========================= */
+
+.footer-eyebrow {
+  margin-bottom: 24px;
+
+  color: var(--purple-light);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+/* =========================
+   TEAM MANAGER
+========================= */
+
+.footer-manager-content {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.footer-manager-image {
+  width: 150px;
+  height: 170px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  border: 1px solid var(--glass-border);
+
+  background: var(--glass-bg);
+}
+
+.footer-manager-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.footer-manager-info h3 {
+  margin-bottom: 7px;
+
+  font-size: 1.6rem;
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+}
+
+.footer-manager-role {
+  margin-bottom: 22px;
+
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer-contact-info {
+  color: var(--text-secondary);
+
+  font-size: 0.8rem;
+}
+
+/* =========================
+   SOCIALS
+========================= */
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+.footer-social-links {
+  display: flex;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+}
+
+.footer-social-link {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--glass-border);
+
+  background: var(--glass-bg);
+
+  color: var(--text-secondary);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.footer-social-link svg {
+  width: 23px;
+  height: 23px;
+
+  fill: currentColor;
+
+  stroke: currentColor;
+
+  stroke-width: 1.5;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-4px);
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(139, 92, 246, 0.2),
+      rgba(236, 72, 153, 0.15)
+    );
+
+  border-color: rgba(167, 139, 250, 0.45);
+
+  box-shadow:
+    0 10px 30px rgba(139, 92, 246, 0.12);
+}
+
+.footer-social-description {
+  max-width: 320px;
+
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
+  line-height: 1.7;
+
+  text-align: right;
+}
+
+/* =========================
+   BOTTOM
+========================= */
+
+.footer-bottom {
+  margin-top: 80px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--text-muted);
+
+  font-size: 0.7rem;
+}
+
+.footer-bottom-logo {
+  color: var(--text-secondary);
+
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  transition: color 0.25s ease;
+}
+
+.footer-bottom-logo:hover {
+  color: var(--text-primary);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 70px 24px 25px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .footer-socials {
+    align-items: flex-start;
+  }
+
+  .footer-social-description {
+    text-align: left;
+  }
+
+  .footer-bottom {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-manager-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-manager-image {
+    width: 130px;
+    height: 150px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+}
